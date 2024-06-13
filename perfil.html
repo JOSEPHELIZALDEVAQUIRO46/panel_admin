@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta author="Daniel Fernandez">
-    <title>Panel Administrativo</title>
+    <title>Perfil de Usuario</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/style.css">
 </head>
-<body >
-   
-
+<body class="dashboard">
         <!-- Content menu -->
 
         <!-- Wrapper -->
@@ -42,63 +40,47 @@
                     </li>
                 </ul>
             </nav>
-    <div id="content" class="container mt-4 p-1 text-center"> <br> <br>
-        <h1>Bienvenido al Panel Administrativo</h1> <br> <br>
+    <div id="content" class="container mt-4">
+        <h1>Perfil de Usuario</h1>
         <div class="row">
-            <div class="col-md-3">
-                <div class="card stats-card">
-                    <div class="card-body">
-                        <div>
-                            <h5 class="card-title">Ventas totales </h5>
-                            <p class="card-text">890</p>
-                        </div>
-                        <div class="stat-icon">
-                            <i class="fas fa-dollar-sign"></i>
-                        </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="IMG/editar.png" class="card-img-top" alt="Foto de perfil" style="max-width: 50%; margin: 0 auto;">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Nombre del Usuario</h5>
+                        <p class="card-text" style="display: inline-block;">
+                            <img src="IMG/correo.png" alt="Correo electrónico" class="card-img" style="max-width: 20px; margin-right: 5px;">
+                            Correo electrónico: usuario@soy.sena.edu.co
+                        </p>                    
+                        <img src="IMG/llamada-telefonica.png" alt="telefono" class="card-img" style="max-width: 20px; margin-left: 10px;">
+                        <p class="card-text" style="display: inline-block;">Teléfono: +57 3219614129</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card stats-card">
+            <div class="col-md-8">
+                <div class="card">
                     <div class="card-body">
-                        <div>
-                            <h5 class="card-title">Visitantes</h5>
-                            <p class="card-text">1.234</p>
-                        </div>
-                        <div class="stat-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card stats-card">
-                    <div class="card-body">
-                        <div>
-                            <h5 class="card-title">Ordenes totales</h5>
-                            <p class="card-text">567</p>
-                        </div>
-                        <div class="stat-icon">
-                            <i class="fas fa-shopping-cart"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card stats-card">
-                    <div class="card-body">
-                        <div>
-                            <h5 class="card-title">Reembolso</h5>
-                            <p class="card-text">321</p>
-                        </div>
-                        <div class="stat-icon">
-                            <i class="fas fa-undo"></i>
-                        </div>
+                        <h5 class="card-title">Información Personal</h5>
+                        <form>
+                            <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" value="Nombre del Usuario">
+                            </div>
+                            <div class="form-group">
+                                <label for="correo">Correo electrónico</label>
+                                <input type="email" class="form-control" id="correo" value="usuario@soy.sena.edu.co">
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono">Teléfono</label>
+                                <input type="text" class="form-control" id="telefono" value="+57 321 9614 129">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-       
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
