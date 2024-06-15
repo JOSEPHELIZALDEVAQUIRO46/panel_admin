@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta author="Daniel Fernandez">
     <title>Pedidos</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -17,7 +16,7 @@
             <!-- Sidebar -->
             <nav id="sidebar" class="bg-dark">
                 <div class="sidebar-header">
-                    <a class="nav-link" href="panel inicial.html"><h3>Panel Admin</h3></a>
+                    <a class="nav-link" href="panel inicial.html"><h4>Inicio</h4></a>
                 </div>
                 <ul class="nav flex-column">
                     <li class="nav-item py-2">
@@ -38,97 +37,91 @@
                     <li class="nav-item">
                         <a class="nav-link" href="pedidos.html">Pedido</a>
                     </li>
+                    <div class="cerrar">
+                        <a href="index.html">
+                            <li>Cerrar Sesión</li>
+                        </a>
+                    </div>
                 </ul>
             </nav>
 
-    <div id="content" class="container mt-4">
-        <h1>Gestión de Pedidos</h1>
-        <table class="table table-bordered">
-            <thead class="thead-dark">
-                <tr>
-                    <th>ID</th>
-                    <th>Cliente</th>
-                    <th>Fecha</th>
-                    <th>Total</th>
-                    <th>Estado</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Cliente 1</td>
-                    <td>2024-06-16</td>
-                    <td>$100.00</td>
-                    <td>Pendiente</td>
-                    <td>
-                        <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#viewOrderModal"><i class="fas fa-eye"></i> Ver</button>
-                        <button class="btn btn-danger btn-sm btn-delete" data-id="1"><i class="fas fa-trash-alt"></i> Eliminar</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <!-- Modal para ver detalles del pedido -->
-    <div class="modal fade" id="viewOrderModal" tabindex="-1" aria-labelledby="viewOrderModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="viewOrderModalLabel">Detalles del Pedido</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p><strong>ID del Pedido:</strong> 1</p>
-                    <p><strong>Cliente:</strong> Cliente 1</p>
-                    <p><strong>Fecha:</strong> 2023-06-01</p>
-                    <p><strong>Total:</strong> $100.00</p>
-                    <p><strong>Estado:</strong> Pendiente</p>
-                    <h5>Productos</h5>
-                    <ul>
-                        <li>Producto 1 - Cantidad: 2 - Precio: $20.00</li>
-                        <li>Producto 2 - Cantidad: 1 - Precio: $60.00</li>
-                    </ul>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <div class="main p-3">
+                <div class="text-center">
+                    <h1>
+                        Pedidos
+                    </h1>
+                    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                        <div class="container-fluid">
+                            <form class="d-flex" role="search">
+                              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                              <button class="btn btn-outline-success" type="submit">Buscar</button>
+                            </form>
+                        </div>
+                      </nav>
+                    <div class="table-responsive py-5">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Fecha</th>
+                                    <th scope="col">Direccion</th>
+                                    <th scope="col">Estado del Pedido</th>
+                                    <th scope="col">Cliente</th>
+                                    <th scope="col">Producto</th>
+                                    <th scope="col">Cantidad</th>
+                                    <th scope="col">Valor</th>
+                                   
+    
+    
+                                </tr>
+                            </thead>
+                            <tbody class="table-group-divider">
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>2020-01-24</td>
+                                    <td>Cll3 N° 2-9</td>
+                                    <td><select class="form-select" aria-label="Default select example">
+                                        <option selected>Estado</option>
+                                        <option value="1">Cancelado</option>
+                                        <option value="2">Completado</option>
+                                        <option value="3">Fallido</option>
+                                        <option value="4">En espera</option>
+                                        <option value="5">Procesando</option>
+                                        <option value="6">Pendiente de pago</option>
+                                        <option value="7">Reemblolsado</option>
+                                        
+                                        
+                                      </select>
+                                    </td>
+                                    <td>Pablo</td>
+                                    <td>Celular</td>
+                                    <td>12</td>
+                                    <td>150.000</td>
+                                    <td>
+                                        <div class="mb-3 form-check text-bg-">
+                                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                            <label class="form-check-label" for="exampleCheck1"></label>
+                                        </div>
+                                    </td>
+    
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div>
+    
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                            <!-- Button trigger modal -->
+    
+                           
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const deleteButtons = document.querySelectorAll('.btn-delete');
-            deleteButtons.forEach(button => {
-                button.addEventListener('click', function () {
-                    const clientId = this.getAttribute('data-id');
-                    if (confirm('¿Estás seguro de que deseas eliminar este cliente?')) {
-                        fetch(`/api/delete-client/${clientId}`, {
-                            method: 'DELETE',
-                        })
-                        .then(response => {
-                            if (response.ok) {
-                                // Eliminar la fila de la tabla
-                                this.closest('tr').remove();
-                                alert('Cliente eliminado exitosamente.');
-                            } else {
-                                alert('Error al eliminar el cliente.');
-                            }
-                        })
-                        .catch(error => {
-                            console.error('Error:', error);
-                            alert('Error al eliminar el cliente.');
-                        });
-                    }
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+            crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+    </body>
+    
+    </html>

@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta author="Daniel Fernandez">
     <title>Clientes</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -17,7 +16,7 @@
             <!-- Sidebar -->
             <nav id="sidebar" class="bg-dark">
                 <div class="sidebar-header">
-                    <a class="nav-link" href="panel inicial.html"><h3>Panel Admin</h3></a>
+                    <a class="nav-link" href="panel inicial.html"><h4>Inicio</h4></a>
                 </div>
                 <ul class="nav flex-column">
                     <li class="nav-item py-2">
@@ -38,115 +37,148 @@
                     <li class="nav-item">
                         <a class="nav-link" href="pedidos.html">Pedido</a>
                     </li>
+                    <div class="cerrar">
+                        <a href="index.html">
+                            <li>Cerrar Sesión</li>
+                        </a>
+                    </div>
                 </ul>
             </nav>
 
-    <div id="content" class="container mt-4">
-        <h1>Gestión de Clientes</h1>
-        <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#addClientModal"><i class="fas fa-plus"></i> Agregar Cliente</button>
-        <table class="table table-bordered">
-            <thead class="thead-dark">
-                <tr>
-                    <th>Número de Documento</th>
-                    <th>Nombres</th>
-                    <th>Apellidos</th>
-                    <th>Email</th>
-                    <th>Celular</th>
-                    <th>Dirección</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1077654389</td>
-                    <td>Sofia</td>
-                    <td>Fierro</td>
-                    <td>Fierro@example.com</td>
-                    <td>3125768754</td>
-                    <td>Calle 457</td>
-                    <td>
-                        <button class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Editar</button>
-                        <button class="btn btn-danger btn-sm btn-delete" data-id="98765432"><i class="fas fa-trash-alt"></i> Eliminar</button>
-                    </td>
-                </tr>
-                <!-- Más filas de ejemplo -->
-            </tbody>
-        </table>
-    </div>
+            <div class="main p-3">
+                <div >
+                    <h1>
+                       Clientes
+                    </h1>
+                    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                        <div class="container-fluid">
+                            <form class="d-flex" role="search">
+                              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                              <button class="btn btn-outline-success" type="submit">Buscar</button>
+                            </form>
+                        </div>
+                      </nav>
+                    <div class="table-responsive py-5">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Documento</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Apellido</th>
+                                    <th scope="col">Direccion</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Telefono</th>
+                                    <th scope="col">Contraseña</th>
+                                    <th scope="col">&</th>
+    
+                                </tr>
+                            </thead>
+                            <tbody class="table-group-divider">
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>1077845488</td>
+                                    <td>Joseph</td>
+                                    <td>Váquiro</td>
+                                    <td>Calle 1f d12-12<    /td>
+                                    <td>Joseph1@gmail.com</td>
+                                    <td>3219614129</td>
+                                    <td>123456789</td>
+                                    <td>
+                                        <div class="mb-3 form-check text-bg-">
+                                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                            <label class="form-check-label" for="exampleCheck1"></label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                
 
-    <!-- Modal para agregar cliente -->
-    <div class="modal fade" id="addClientModal" tabindex="-1" aria-labelledby="addClientModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addClientModalLabel">Agregar Cliente</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form id="addClientForm">
-                        <div class="form-group">
-                            <label for="clientDocumentNumber">Número de Documento</label>
-                            <input type="text" class="form-control" id="clientDocumentNumber" required>
+                            </tbody>
+                        </table>
+                        <div>
+                           
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                            <!-- Button trigger modal -->
+                          
+                               <!-- Button trigger modal -->
+                               <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                               data-bs-target="#exampleModal">
+                               Actualizar
+                           </button>
+    
+                           <!-- Modal -->
+                           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                               aria-hidden="true">
+                               <div class="modal-dialog">
+                                   <div class="modal-content">
+                                       <div class="modal-header">
+                                           <h1 class="modal-title fs-5" id="exampleModalLabel">Actualizar la Informacion</h1>
+                                           <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                               aria-label="Close"></button>
+                                       </div>
+                                       <div class="modal-body">
+                                           <div class="mb-3">
+                                               <label for="exampleFormControlInput1" class="form-label">Documento</label>
+                                               <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                             </div>
+                                             <div class="mb-3">
+                                               <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+                                               <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                             </div>
+                                             <div class="mb-3">
+                                               <label for="exampleFormControlInput1" class="form-label">Apellido</label>
+                                               <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                             </div>
+                                             <div class="mb-3">
+                                               <label for="exampleFormControlInput1" class="form-label">Rol</label>
+                                               <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                             </div>
+                                             <div class="mb-3">
+                                               <label for="exampleFormControlInput1" class="form-label">Email</label>
+                                               <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                             </div>
+                                             <div class="mb-3">
+                                               <label for="exampleFormControlInput1" class="form-label">Telefono</label>
+                                               <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                             </div>
+                                             <div class="row g-3 align-items-center">
+                                               <div class="col-auto">
+                                                 <label for="inputPassword6" class="col-form-label">Contraseña</label>
+                                               </div>
+                                               <div class="col-auto">
+                                                 <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                                               </div>
+                                               <div class="col-auto">
+                                                 <span id="passwordHelpInline" class="form-text">
+                                                   Debe contener minimo 8-20 caracteres.
+                                                 </span>
+                                               </div>
+                                             </div>
+                                       </div>
+                                       <div class="modal-footer">
+                                           <button type="button" class="btn btn-secondary"
+                                               data-bs-dismiss="modal">Cerrar</button>
+                                           <a href="usuario.html" type="button" class="btn btn-primary">Actualizar</a>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
                         </div>
-                        <div class="form-group">
-                            <label for="clientFirstName">Nombres</label>
-                            <input type="text" class="form-control" id="clientFirstName" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="clientLastName">Apellidos</label>
-                            <input type="text" class="form-control" id="clientLastName" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="clientEmail">Email</label>
-                            <input type="email" class="form-control" id="clientEmail" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="clientCellPhone">Celular</label>
-                            <input type="text" class="form-control" id="clientCellPhone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="clientAddress">Dirección</label>
-                            <input type="text" class="form-control" id="clientAddress" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Guardar</button>
-                    </form>
+    
+    
+    
+    
+    
+    
+    
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const deleteButtons = document.querySelectorAll('.btn-delete');
-            deleteButtons.forEach(button => {
-                button.addEventListener('click', function () {
-                    const clientId = this.getAttribute('data-id');
-                    if (confirm('¿Estás seguro de que deseas eliminar este cliente?')) {
-                        fetch(`/api/delete-client/${clientId}`, {
-                            method: 'DELETE',
-                        })
-                        .then(response => {
-                            if (response.ok) {
-                                // Eliminar la fila de la tabla
-                                this.closest('tr').remove();
-                                alert('Cliente eliminado exitosamente.');
-                            } else {
-                                alert('Error al eliminar el cliente.');
-                            }
-                        })
-                        .catch(error => {
-                            console.error('Error:', error);
-                            alert('Error al eliminar el cliente.');
-                        });
-                    }
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+            crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+    </body>
+    
+    </html>
